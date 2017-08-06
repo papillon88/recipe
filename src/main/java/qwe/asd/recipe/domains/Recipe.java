@@ -1,6 +1,8 @@
 package qwe.asd.recipe.domains;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Recipe {
@@ -21,16 +23,26 @@ public class Recipe {
     private Byte[] image;
 
     @OneToOne(cascade = CascadeType.ALL)
-    private Notes notes;
+    private Note note;
 
 
-
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "recipe")
+    private Set<Ingredient> ingredients = new HashSet<>();
 
     /*******************
     ******************
     G and S
     ******************
     *******************/
+
+
+    public Set<Ingredient> getIngredients() {
+        return ingredients;
+    }
+
+    public void setIngredients(Set<Ingredient> ingredients) {
+        this.ingredients = ingredients;
+    }
 
 
     public Long getId() {
@@ -105,11 +117,13 @@ public class Recipe {
         this.image = image;
     }
 
-    public Notes getNotes() {
-        return notes;
+    public Note getNote() {
+        return note;
     }
 
-    public void setNotes(Notes notes) {
-        this.notes = notes;
+    public void setNote(Note note) {
+        this.note = note;
     }
+
+
 }

@@ -4,7 +4,7 @@ package qwe.asd.recipe.domains;
 import javax.persistence.*;
 
 @Entity
-public class Notes {
+public class Note {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
