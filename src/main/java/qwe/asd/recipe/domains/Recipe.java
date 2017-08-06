@@ -1,5 +1,7 @@
 package qwe.asd.recipe.domains;
 
+import qwe.asd.recipe.enumerations.Difficulty;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -23,6 +25,8 @@ public class Recipe {
     private Note note;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "recipe")
     private Set<Ingredient> ingredients = new HashSet<>();
+    @Enumerated(value = EnumType.STRING)
+    private Difficulty difficulty;
 
     /*******************
     ******************
@@ -120,5 +124,11 @@ public class Recipe {
         this.note = note;
     }
 
+    public Difficulty getDifficulty() {
+        return difficulty;
+    }
 
+    public void setDifficulty(Difficulty difficulty) {
+        this.difficulty = difficulty;
+    }
 }
