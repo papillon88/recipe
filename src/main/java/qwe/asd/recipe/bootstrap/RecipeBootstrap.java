@@ -147,29 +147,29 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
                 "avocados, radishes, tomatoes, red onions, wedges of lime, and a sour cream sauce. " +
                 "I add arugula, as well – this green isn’t traditional for tacos, but we always seem to have some " +
                 "in the fridge and I think it adds a nice green crunch to the tacos.\n" ;
-        Note note = new Note(spcyGrldChknTacoNote);
+        Note note = new Note(spcyGrldChknTacoNote,spcyGrldChknTaco);
         spcyGrldChknTaco.setNote(note);
         spcyGrldChknTaco.setDifficulty(Difficulty.MEDIUM);
         spcyGrldChknTaco.getCategories().add(mexicanCategory);
-        spcyGrldChknTaco.getIngredients().add(new Ingredient("ancho chili powder",new BigDecimal(2),tableSpoonUom));
-        spcyGrldChknTaco.getIngredients().add(new Ingredient("dried oregano",new BigDecimal(1),teaSpoonUom));
-        spcyGrldChknTaco.getIngredients().add(new Ingredient("dried cumin",new BigDecimal(1),teaSpoonUom));
-        spcyGrldChknTaco.getIngredients().add(new Ingredient("sugar",new BigDecimal(1),teaSpoonUom));
-        spcyGrldChknTaco.getIngredients().add(new Ingredient("salt",new BigDecimal(1/2),teaSpoonUom));
-        spcyGrldChknTaco.getIngredients().add(new Ingredient("finely chopped garlic clove",new BigDecimal(1),numberUom));
-        spcyGrldChknTaco.getIngredients().add(new Ingredient("finely grated orange zest",new BigDecimal(1),tableSpoonUom));
-        spcyGrldChknTaco.getIngredients().add(new Ingredient("fresh squeezed orange juice",new BigDecimal(3),tableSpoonUom));
-        spcyGrldChknTaco.getIngredients().add(new Ingredient("olive oil",new BigDecimal(2),tableSpoonUom));
-        spcyGrldChknTaco.getIngredients().add(new Ingredient("chicken thighs",new BigDecimal(5),numberUom));
-        spcyGrldChknTaco.getIngredients().add(new Ingredient("corn tortillas",new BigDecimal(8),numberUom));
-        spcyGrldChknTaco.getIngredients().add(new Ingredient("baby arugula",new BigDecimal(3),cupUom));
-        spcyGrldChknTaco.getIngredients().add(new Ingredient("sliced ripe avocados",new BigDecimal(2),numberUom));
-        spcyGrldChknTaco.getIngredients().add(new Ingredient("thinly sliced radishes",new BigDecimal(4),numberUom));
-        spcyGrldChknTaco.getIngredients().add(new Ingredient("halved cherry tomatoes",new BigDecimal(0.5),pintUom));
-        spcyGrldChknTaco.getIngredients().add(new Ingredient("thinly sliced red onions",new BigDecimal(0.25),numberUom));
-        spcyGrldChknTaco.getIngredients().add(new Ingredient("roughly chopped cilantro",new BigDecimal(1),pintUom));
-        spcyGrldChknTaco.getIngredients().add(new Ingredient("sour cream",new BigDecimal(0.5),cupUom));
-        spcyGrldChknTaco.getIngredients().add(new Ingredient("wedges cut lime",new BigDecimal(1),numberUom));
+        spcyGrldChknTaco.getIngredients().add(new Ingredient("ancho chili powder",new BigDecimal(2),tableSpoonUom,spcyGrldChknTaco));
+        spcyGrldChknTaco.getIngredients().add(new Ingredient("dried oregano",new BigDecimal(1),teaSpoonUom,spcyGrldChknTaco));
+        spcyGrldChknTaco.getIngredients().add(new Ingredient("dried cumin",new BigDecimal(1),teaSpoonUom,spcyGrldChknTaco));
+        spcyGrldChknTaco.getIngredients().add(new Ingredient("sugar",new BigDecimal(1),teaSpoonUom,spcyGrldChknTaco));
+        spcyGrldChknTaco.getIngredients().add(new Ingredient("salt",new BigDecimal(1/2),teaSpoonUom,spcyGrldChknTaco));
+        spcyGrldChknTaco.getIngredients().add(new Ingredient("finely chopped garlic clove",new BigDecimal(1),numberUom,spcyGrldChknTaco));
+        spcyGrldChknTaco.getIngredients().add(new Ingredient("finely grated orange zest",new BigDecimal(1),tableSpoonUom,spcyGrldChknTaco));
+        spcyGrldChknTaco.getIngredients().add(new Ingredient("fresh squeezed orange juice",new BigDecimal(3),tableSpoonUom,spcyGrldChknTaco));
+        spcyGrldChknTaco.getIngredients().add(new Ingredient("olive oil",new BigDecimal(2),tableSpoonUom,spcyGrldChknTaco));
+        spcyGrldChknTaco.getIngredients().add(new Ingredient("chicken thighs",new BigDecimal(5),numberUom,spcyGrldChknTaco));
+        spcyGrldChknTaco.getIngredients().add(new Ingredient("corn tortillas",new BigDecimal(8),numberUom,spcyGrldChknTaco));
+        spcyGrldChknTaco.getIngredients().add(new Ingredient("baby arugula",new BigDecimal(3),cupUom,spcyGrldChknTaco));
+        spcyGrldChknTaco.getIngredients().add(new Ingredient("sliced ripe avocados",new BigDecimal(2),numberUom,spcyGrldChknTaco));
+        spcyGrldChknTaco.getIngredients().add(new Ingredient("thinly sliced radishes",new BigDecimal(4),numberUom,spcyGrldChknTaco));
+        spcyGrldChknTaco.getIngredients().add(new Ingredient("halved cherry tomatoes",new BigDecimal(0.5),pintUom,spcyGrldChknTaco));
+        spcyGrldChknTaco.getIngredients().add(new Ingredient("thinly sliced red onions",new BigDecimal(0.25),numberUom,spcyGrldChknTaco));
+        spcyGrldChknTaco.getIngredients().add(new Ingredient("roughly chopped cilantro",new BigDecimal(1),pintUom,spcyGrldChknTaco));
+        spcyGrldChknTaco.getIngredients().add(new Ingredient("sour cream",new BigDecimal(0.5),cupUom,spcyGrldChknTaco));
+        spcyGrldChknTaco.getIngredients().add(new Ingredient("wedges cut lime",new BigDecimal(1),numberUom,spcyGrldChknTaco));
 
 
         recipes.add(spcyGrldChknTaco);

@@ -24,6 +24,13 @@ public class Note {
         this.recipeNotes = recipeNotes;
     }
 
+    public Note(String recipeNotes, Recipe recipe) {
+        this.recipeNotes = recipeNotes;
+        this.recipe = recipe;
+    }
+
+    public Note(){}
+
     /*******************
      ******************
      G and S
