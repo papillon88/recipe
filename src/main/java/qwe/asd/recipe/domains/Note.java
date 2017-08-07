@@ -16,6 +16,16 @@ public class Note {
 
     /*******************
      ******************
+     Constructors
+     ******************
+     *******************/
+
+    public Note(String recipeNotes) {
+        this.recipeNotes = recipeNotes;
+    }
+
+    /*******************
+     ******************
      G and S
      ******************
      *******************/

@@ -7,3 +7,5 @@ insert into unit_of_measure (uom) values ('tablespoon');
 insert into unit_of_measure (uom) values ('cup');
 insert into unit_of_measure (uom) values ('pinch');
 insert into unit_of_measure (uom) values ('ounce');
+insert into unit_of_measure (uom) values ('pint');
+insert into unit_of_measure (uom) values ('number');
