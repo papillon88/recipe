@@ -10,15 +10,15 @@
 <table>
     <tr>
         <th>ID</th>
-        <th>Description</th>
+        <th>Cook Time</th>
         <th>Prep Time</th>
         <th>Source</th>
     </tr>
     <tr th:each="recipe : ${recipes}">
         <td th:text="${recipe.id}"></td>
-        <td th:text="${recipe.description}"></td>
+        <td th:text="${recipe.cookTime}"></td>
         <td th:text="${recipe.prepTime}"></td>
-        <td th:text="${recipe.source}"></td>
+        <td th:text="${recipe.url}"></td>
     </tr>
 </table>
 </body>

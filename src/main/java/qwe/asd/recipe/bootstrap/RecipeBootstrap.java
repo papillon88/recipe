@@ -176,8 +176,45 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
         spcyGrldChknTaco.addIngredient(new Ingredient("sour cream",new BigDecimal(0.5),cupUom));
         spcyGrldChknTaco.addIngredient(new Ingredient("wedges cut lime",new BigDecimal(1),numberUom));
 
+        //Sautéed Zucchini with Dill
+        Recipe sautdZuchWdDill = new Recipe();
+        sautdZuchWdDill.setDescription("This sautéed zucchini with dill is such a simple and easy side " +
+                "dish for summer meals. Six ingredients. Takes 15 minutes. " +
+                "Great on its own, or serve with grilled chicken or fish.");
+        sautdZuchWdDill.setPrepTime(5);
+        sautdZuchWdDill.setCookTime(25);
+        sautdZuchWdDill.setServings(7);
+        sautdZuchWdDill.setSource("www.simplyrecipes.com");
+        sautdZuchWdDill.setUrl("http://www.simplyrecipes.com/recipes/sauteed_zucchini_with_dill/");
+        String sautdZuchWdDillDirections = "1 Prepare the zucchini: Cut away the stem from the zucchini and trim the bottom end. Slice the zucchini into 1/8-inch rounds using  a mandolin, food processor, or your very best knife skills." +
+                "2 Cook the zucchini in two batches: In a large skillet, heat 2 tablespoons of the olive oil over medium-high heat. Add half the zucchini. Cook without stirring for 4 minutes, or until some of the rounds are golden when you lift them with a spatula.\n" +
+                "Sprinkle with 1/4 teaspoon of the salt and 1/8 teaspoon of the pepper. Turn and cook 2 minutes more without disturbing or until more rounds are brown. Do this two more times. Not all the rounds will be browned but a lot of them will be. Transfer to a bowl.\n" +
+                "Cook the second batch of zucchini with the remaining 2 tablespoons oil in the same way. Return all the zucchini to the pan." +
+                "3 Season the zucchini: Combine the dill and lemon rind on a cutting board and chop them together just to mix them. Sprinkle the hot zucchini with the dill and lemon mixture, and toss well. Taste for seasoning and add more salt and pepper, if you like.\n" +
+                "4 Serve hot or warm.";
+        sautdZuchWdDill.setDirections(sautdZuchWdDillDirections);
+        String sautdZuchWdDillNote = "When the zucchini in your garden is still slender and about 7-inches long – before they get big as baseball bats — the seeds will be small and the flesh will be sweet.\n" +
+                "Zucchini at this stage hardly needs any adornment. I like to cut my zucchini into thin coins and toss them in a hot skillet with some oil until they start to turn golden brown. That’s it!" +
+                "This simple sauté takes just a few minutes. The zucchini can go to the table on its own, or you can use it as a bed for grilled chicken or fish. Any leftover zucchini is great served with a fried egg for breakfast the next day!\n" +
+                "I like to use a mandoline to slice the zucchini into thin, uniform circles, but you can also use a food processor with a slicing blade. If the opening of your food processor is too small for whole zucchini, halve them lengthwise to make half-coins.\n" +
+                "I like to add fresh dill and lemon zest to my sauté. They add just the right aromatics to the zucchini.\n" +
+                "With only six ingredients and about 15 minutes of your time, you have a beautiful vegetable dish for your summer table.\n";
+        Note note2 = new Note(spcyGrldChknTacoNote);
+        sautdZuchWdDill.setNote(note2);
+        sautdZuchWdDill.setDifficulty(Difficulty.EASY);
+        sautdZuchWdDill.getCategories().add(americanCategory);
+        sautdZuchWdDill.addIngredient(new Ingredient("medium zucchini",new BigDecimal(6),numberUom));
+        sautdZuchWdDill.addIngredient(new Ingredient("olive oil",new BigDecimal(4),tableSpoonUom));
+        sautdZuchWdDill.addIngredient(new Ingredient("salt",new BigDecimal(0.5),teaSpoonUom));
+        sautdZuchWdDill.addIngredient(new Ingredient("ground black pepper",new BigDecimal(0.25),teaSpoonUom));
+        sautdZuchWdDill.addIngredient(new Ingredient("chopped fresh dill",new BigDecimal(2),tableSpoonUom));
+        sautdZuchWdDill.addIngredient(new Ingredient("finely chopped garlic clove",new BigDecimal(1),numberUom));
+
+
+
 
         recipes.add(spcyGrldChknTaco);
+        recipes.add(sautdZuchWdDill);
 
         return recipes;
     }
