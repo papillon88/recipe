@@ -1,5 +1,6 @@
 package qwe.asd.recipe.controllers;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +17,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
+@Slf4j
 @Controller
 public class IndexController {
 
@@ -28,6 +30,7 @@ public class IndexController {
     public String getIndexPage(Model model){
         Set<Recipe> recipes = recipeService.getAllRecipes();
         model.addAttribute("recipes",recipes);
+        log.debug("******************************loading controller");
         return "index";
     }
 }

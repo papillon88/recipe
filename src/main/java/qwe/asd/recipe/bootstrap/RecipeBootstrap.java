@@ -1,5 +1,6 @@
 package qwe.asd.recipe.bootstrap;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
@@ -10,11 +11,13 @@ import qwe.asd.recipe.repositories.CategoryRepo;
 import qwe.asd.recipe.repositories.RecipeRepo;
 import qwe.asd.recipe.repositories.UnitOfMeasureRepo;
 
+import javax.transaction.Transactional;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+@Slf4j
 @Component
 public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEvent>{
 
@@ -26,8 +29,10 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
     private UnitOfMeasureRepo unitOfMeasureRepo;
 
 
+    @Transactional
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
+        log.debug("*******************************loading data from bootstrap");
         recipeRepo.save(getRecipes());
     }
 
