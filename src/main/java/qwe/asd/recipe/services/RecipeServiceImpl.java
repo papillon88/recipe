@@ -17,10 +17,22 @@ public class RecipeServiceImpl implements RecipeService {
     @Autowired
     private RecipeRepo recipeRepo;
 
+    /************************************
+    *************************************
+    Constructors
+    *************************************
+    ************************************/
+
+    public RecipeServiceImpl(RecipeRepo recipeRepo){
+        this.recipeRepo = recipeRepo;
+        log.debug("executing recipe service impl constructor");
+    }
+
     @Override
     public Set<Recipe> getAllRecipes() {
         log.debug("executing recipe service impl");
         Set<Recipe> recipes = new HashSet<>();
+        System.out.println("is NULL ?" + recipeRepo != null);
         recipeRepo.findAll().forEach(recipes::add);
         return recipes;
     }
