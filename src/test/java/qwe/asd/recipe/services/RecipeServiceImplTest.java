@@ -29,7 +29,8 @@ public class RecipeServiceImplTest {
 
     @Test
     public void getAllRecipes() throws Exception {
-
+        //line throwing null pointer exception
+        Set<Recipe> recipes = recipeService.getAllRecipes();
     }
 
 }
