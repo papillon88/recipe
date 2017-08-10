@@ -30,6 +30,8 @@ public class RecipeServiceImplTest {
     @Test
     public void getAllRecipes() throws Exception {
 
+        //throws error here...
+
     }
 
 }
