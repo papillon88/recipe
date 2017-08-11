@@ -3,15 +3,15 @@ package qwe.asd.recipe.services;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import qwe.asd.recipe.domains.Recipe;
 import qwe.asd.recipe.repositories.RecipeRepo;
 
-import java.util.HashSet;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
-import static org.junit.Assert.*;
+import static org.mockito.Mockito.when;
 
 public class RecipeServiceImplTest {
 
@@ -29,6 +29,11 @@ public class RecipeServiceImplTest {
 
     @Test
     public void getAllRecipes() throws Exception {
+
+        List<Recipe> recipeList = new ArrayList<>();
+
+        when(recipeRepo.findAll()).thenReturn(recipeList);
+
         //line throwing null pointer exception
         Set<Recipe> recipes = recipeService.getAllRecipes();
     }
