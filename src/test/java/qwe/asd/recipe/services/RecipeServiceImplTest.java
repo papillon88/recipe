@@ -32,8 +32,14 @@ public class RecipeServiceImplTest {
     @Test
     public void getAllRecipes() throws Exception {
         Set<Recipe> recipeSet = new HashSet<>();
+        recipeSet.add(new Recipe());
         Mockito.when(recipeRepo.findAll()).thenReturn(recipeSet);
         Set<Recipe> recipes = recipeService.getAllRecipes();
+
+        assertEquals(recipes.size(),1);
+        Mockito.verify(recipeRepo,Mockito.times(1)).findAll();
+
+
     }
 
 }
