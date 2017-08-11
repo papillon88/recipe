@@ -8,7 +8,9 @@ import org.mockito.MockitoAnnotations;
 import qwe.asd.recipe.domains.Recipe;
 import qwe.asd.recipe.repositories.RecipeRepo;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import static org.junit.Assert.*;
@@ -29,9 +31,9 @@ public class RecipeServiceImplTest {
 
     @Test
     public void getAllRecipes() throws Exception {
-
-        //throws error here...
-
+        Set<Recipe> recipeSet = new HashSet<>();
+        Mockito.when(recipeRepo.findAll()).thenReturn(recipeSet);
+        Set<Recipe> recipes = recipeService.getAllRecipes();
     }
 
 }
