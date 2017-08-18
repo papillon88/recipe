@@ -35,6 +35,7 @@
                 <tbody>
                 <!--/*@thymesVar id="recipes" type="qwe.asd.recipe.domains.Recipe"*/-->
                 <tr th:each="recipe : ${recipes}">
+                    <!--/*@thymesVar id="recipe" type="qwe.asd.recipe.domains.Recipe"*/-->
                     <td th:text="${recipe.id}"></td>
                     <td th:text="${recipe.description}"></td>
                     <td><a th:href="@{'/recipe/show/'+${recipe.id}}">View</a> </td>
