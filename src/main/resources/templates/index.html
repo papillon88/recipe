@@ -3,23 +3,43 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Recipe Home</title>
-</head>
-<body>
-<h1>My Recipes !</h1>
 
-<table>
-    <tr>
-        <th>ID</th>
-        <th>Cook Time</th>
-        <th>Prep Time</th>
-        <th>Source</th>
-    </tr>
-    <tr th:each="recipe : ${recipes}">
-        <td th:text="${recipe.id}"></td>
-        <td th:text="${recipe.cookTime}"></td>
-        <td th:text="${recipe.prepTime}"></td>
-        <td th:text="${recipe.url}"></td>
-    </tr>
-</table>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body style="background-color: #C6D9F1">
+
+<div class="container">
+    <div class="panel panel-primary" style="margin-top: 20px">
+        <div class="panel-heading" style="font-size: large;">
+            Recipes
+        </div>
+        <div class="panel-body">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Cook Time</th>
+                    <th>Prep Time</th>
+                    <th>Source</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="recipe : ${recipes}">
+                    <td th:text="${recipe.id}"></td>
+                    <td th:text="${recipe.cookTime}"></td>
+                    <td th:text="${recipe.prepTime}"></td>
+                    <td th:text="${recipe.url}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
 </body>
 </html>
