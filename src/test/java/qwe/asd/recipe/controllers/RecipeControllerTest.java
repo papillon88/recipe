@@ -11,6 +11,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.ui.Model;
+import qwe.asd.recipe.domains.Recipe;
 import qwe.asd.recipe.services.RecipeService;
 
 import static org.junit.Assert.*;
@@ -42,11 +43,15 @@ public class RecipeControllerTest {
 
     @Test
     public void recipeControllerMockMVC() throws Exception{
+        Recipe recipe = new Recipe();
+        recipe.setId(1L);
         MockMvc mockMvc = MockMvcBuilders.standaloneSetup(recipeController).build();
+        Mockito.when(recipeService.getRecipeById(Matchers.anyLong())).thenReturn(recipe);
 
         mockMvc.perform(MockMvcRequestBuilders.get("/recipe/show/1"))
                 .andExpect(MockMvcResultMatchers.status().isOk())
-                .andExpect(MockMvcResultMatchers.view().name("show"));
+                .andExpect(MockMvcResultMatchers.view().name("show"))
+                .andExpect(MockMvcResultMatchers.model().attributeExists("recipe"));
     }
 
 }
