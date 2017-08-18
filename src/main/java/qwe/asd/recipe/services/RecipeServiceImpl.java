@@ -8,6 +8,7 @@ import qwe.asd.recipe.repositories.RecipeRepo;
 
 import java.util.HashSet;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 @Slf4j
@@ -36,4 +37,14 @@ public class RecipeServiceImpl implements RecipeService {
         recipeRepo.findAll().forEach(recipes::add);
         return recipes;
     }
+
+    @Override
+    public Recipe getRecipeById(Long id) {
+        Optional<Recipe> recipeOptional = recipeRepo.findById(id);
+        if(!recipeOptional.isPresent())
+            throw new RuntimeException("Recipe NOT found");
+        return recipeOptional.get();
+    }
+
+
 }

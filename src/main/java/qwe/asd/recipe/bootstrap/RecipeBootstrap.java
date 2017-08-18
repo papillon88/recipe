@@ -116,8 +116,7 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
 
         //spicy grilled chicken taco
         Recipe spcyGrldChknTaco = new Recipe();
-        spcyGrldChknTaco.setDescription("Spicy grilled chicken tacos! Quick marinade, then grill. " +
-                "Ready in about 30 minutes. Great for a quick weeknight dinner, backyard cookouts, and tailgate parties.");
+        spcyGrldChknTaco.setDescription("Spicy grilled chicken tacos");
         spcyGrldChknTaco.setPrepTime(20);
         spcyGrldChknTaco.setCookTime(15);
         spcyGrldChknTaco.setServings(5);
@@ -178,9 +177,7 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
 
         //Sautéed Zucchini with Dill
         Recipe sautdZuchWdDill = new Recipe();
-        sautdZuchWdDill.setDescription("This sautéed zucchini with dill is such a simple and easy side " +
-                "dish for summer meals. Six ingredients. Takes 15 minutes. " +
-                "Great on its own, or serve with grilled chicken or fish.");
+        sautdZuchWdDill.setDescription("Sautéed zucchini with dill");
         sautdZuchWdDill.setPrepTime(5);
         sautdZuchWdDill.setCookTime(25);
         sautdZuchWdDill.setServings(7);

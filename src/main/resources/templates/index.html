@@ -4,9 +4,16 @@
     <meta charset="UTF-8"/>
     <title>Recipe Home</title>
 
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}"/>
+    <script th:href="@{/webjars/jquery/3.2.1/jquery.min.js}"></script>
+    <script th:href="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+
+    <!--for static use without spring boot app running-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
 
 </head>
 <body style="background-color: #C6D9F1">
@@ -21,17 +28,16 @@
                 <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Cook Time</th>
-                    <th>Prep Time</th>
-                    <th>Source</th>
+                    <th>Description</th>
+                    <th>View</th>
                 </tr>
                 </thead>
                 <tbody>
+                <!--/*@thymesVar id="recipes" type="qwe.asd.recipe.domains.Recipe"*/-->
                 <tr th:each="recipe : ${recipes}">
                     <td th:text="${recipe.id}"></td>
-                    <td th:text="${recipe.cookTime}"></td>
-                    <td th:text="${recipe.prepTime}"></td>
-                    <td th:text="${recipe.url}"></td>
+                    <td th:text="${recipe.description}"></td>
+                    <td><a th:href="@{'/recipe/show/'+${recipe.id}}">View</a> </td>
                 </tr>
                 </tbody>
             </table>
