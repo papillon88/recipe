@@ -20,7 +20,6 @@ public class RecipeCommandToRecipe implements Converter<RecipeCommand,Recipe> {
     private CategoryCommandToCategory categoryCommandToCategory;
 
     @Synchronized
-    @Nullable
     @Override
     public Recipe convert(RecipeCommand source) {
         if(source == null)

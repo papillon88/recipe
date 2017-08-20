@@ -12,7 +12,6 @@ import qwe.asd.recipe.domains.Note;
 public class NoteToNoteCommand implements Converter<Note,NoteCommand> {
 
     @Synchronized
-    @Nullable
     @Override
     public NoteCommand convert(Note source) {
         if(source == null)

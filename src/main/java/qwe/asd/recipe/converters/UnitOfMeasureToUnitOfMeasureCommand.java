@@ -12,7 +12,6 @@ import qwe.asd.recipe.domains.UnitOfMeasure;
 public class UnitOfMeasureToUnitOfMeasureCommand implements Converter<UnitOfMeasure,UnitOfMeasureCommand> {
 
     @Synchronized
-    @Nullable
     @Override
     public UnitOfMeasureCommand convert(UnitOfMeasure source) {
         if(source == null)

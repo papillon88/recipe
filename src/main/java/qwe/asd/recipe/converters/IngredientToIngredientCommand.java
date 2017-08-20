@@ -15,7 +15,6 @@ public class IngredientToIngredientCommand implements Converter<Ingredient,Ingre
     private UnitOfMeasureToUnitOfMeasureCommand unitOfMeasureToUnitOfMeasureCommand;
 
     @Synchronized
-    @Nullable
     @Override
     public IngredientCommand convert(Ingredient source) {
         if(source == null)

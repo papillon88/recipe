@@ -11,7 +11,6 @@ import qwe.asd.recipe.domains.Category;
 public class CategoryToCategoryCommand implements Converter<Category,CategoryCommand> {
 
     @Synchronized
-    @Nullable
     @Override
     public CategoryCommand convert(Category source) {
         if(source == null)
