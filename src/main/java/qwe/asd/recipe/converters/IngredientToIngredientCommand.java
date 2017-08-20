@@ -3,9 +3,11 @@ package qwe.asd.recipe.converters;
 import com.sun.istack.internal.Nullable;
 import lombok.Synchronized;
 import org.springframework.core.convert.converter.Converter;
+import org.springframework.stereotype.Component;
 import qwe.asd.recipe.commands.IngredientCommand;
 import qwe.asd.recipe.domains.Ingredient;
 
+@Component
 public class IngredientToIngredientCommand implements Converter<Ingredient,IngredientCommand> {
 
     @Synchronized
