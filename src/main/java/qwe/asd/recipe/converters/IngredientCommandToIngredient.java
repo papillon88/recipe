@@ -1,6 +1,9 @@
 package qwe.asd.recipe.converters;
 
+import lombok.Getter;
+import lombok.Setter;
 import lombok.Synchronized;
+import lombok.ToString;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
@@ -9,6 +12,8 @@ import qwe.asd.recipe.domains.Ingredient;
 
 
 @Component
+@Getter
+@Setter
 public class IngredientCommandToIngredient implements Converter<IngredientCommand,Ingredient> {
 
     @Autowired
