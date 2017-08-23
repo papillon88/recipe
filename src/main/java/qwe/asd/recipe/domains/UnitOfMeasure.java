@@ -16,4 +16,10 @@ public class UnitOfMeasure {
     private Long id;
     private String uom;
 
+    public UnitOfMeasure(String uom) {
+        this.uom = uom;
+    }
+
+    public UnitOfMeasure() {
+    }
 }

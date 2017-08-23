@@ -5,7 +5,8 @@ import lombok.*;
 
 import javax.persistence.*;
 
-@Data
+@Getter
+@Setter
 @EqualsAndHashCode(exclude = {"recipe"})
 @Entity
 public class Note {
@@ -34,5 +35,7 @@ public class Note {
     }
 
     public Note(){}
+
+
 
 }
