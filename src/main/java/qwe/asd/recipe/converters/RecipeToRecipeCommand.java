@@ -1,5 +1,7 @@
 package qwe.asd.recipe.converters;
 
+import lombok.Getter;
+import lombok.Setter;
 import lombok.Synchronized;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.converter.Converter;
@@ -7,6 +9,8 @@ import org.springframework.stereotype.Component;
 import qwe.asd.recipe.commands.RecipeCommand;
 import qwe.asd.recipe.domains.Recipe;
 
+@Getter
+@Setter
 @Component
 public class RecipeToRecipeCommand implements Converter<Recipe,RecipeCommand>{
 
@@ -17,6 +21,9 @@ public class RecipeToRecipeCommand implements Converter<Recipe,RecipeCommand>{
     @Autowired
     private NoteToNoteCommand noteToNoteCommand;
 
+
+    public RecipeToRecipeCommand() {
+    }
 
     @Synchronized
     @Override
@@ -37,6 +44,7 @@ public class RecipeToRecipeCommand implements Converter<Recipe,RecipeCommand>{
 
 
         recipeCommand.setNoteCommand(noteToNoteCommand.convert(source.getNote()));
+
         if(source.getIngredients().size() > 0 && source.getIngredients() != null){
             source.getIngredients()
                     .forEach(ingredient -> recipeCommand.getIngredients().add(ingredientToIngredientCommand.convert(ingredient)));

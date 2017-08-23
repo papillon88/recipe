@@ -1,5 +1,7 @@
 package qwe.asd.recipe.converters;
 
+import lombok.Getter;
+import lombok.Setter;
 import lombok.Synchronized;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.converter.Converter;
@@ -8,6 +10,8 @@ import qwe.asd.recipe.commands.RecipeCommand;
 import qwe.asd.recipe.domains.Recipe;
 
 
+@Getter
+@Setter
 @Component
 public class RecipeCommandToRecipe implements Converter<RecipeCommand,Recipe> {
 
