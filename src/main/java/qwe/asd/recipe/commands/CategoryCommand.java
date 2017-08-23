@@ -6,4 +6,11 @@ import lombok.Data;
 public class CategoryCommand {
     private Long id;
     private String description;
+
+    public CategoryCommand(Long id) {
+        this.id = id;
+    }
+
+    public CategoryCommand() {
+    }
 }

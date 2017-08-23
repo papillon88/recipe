@@ -6,4 +6,11 @@ import lombok.Data;
 public class NoteCommand {
     private Long id;
     private String recipeNotes;
+
+    public NoteCommand(Long id) {
+        this.id = id;
+    }
+
+    public NoteCommand() {
+    }
 }
