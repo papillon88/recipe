@@ -59,15 +59,15 @@ public class RecipeCommandToRecipeTest {
         recipeCommand.getIngredients().add(ingredientCommand);
 
 
-        Mockito.when(noteCommandToNote.convert(Matchers.any(NoteCommand.class))).thenReturn(new Note("sample recipe notes"));
-        Mockito.when(ingredientCommandToIngredient.convert(Matchers.eq(ingredientCommand))).thenReturn(new Ingredient(new UnitOfMeasure("teaspoon")));
+        Mockito.when(noteCommandToNote.convert(Matchers.any(NoteCommand.class))).thenReturn(new Note("sample note"));
+        Mockito.when(ingredientCommandToIngredient.convert(Matchers.eq(ingredientCommand))).thenReturn(new Ingredient(new UnitOfMeasure("sample teaspoon")));
         Mockito.when(categoryCommandToCategory.convert(Matchers.eq(categoryCommand))).thenReturn(new Category("sample category"));
 
         Recipe recipe = recipeCommandToRecipe.convert(recipeCommand);
         assertNotNull(recipe);
         assertNotNull(recipe.getCategories().iterator().next());
-        assertEquals("sample recipe notes",recipe.getNote().getRecipeNotes());
-        assertEquals("teaspoon",recipe.getIngredients().iterator().next().getUnitOfMeasure().getUom());
+        assertEquals("sample note",recipe.getNote().getRecipeNotes());
+        assertEquals("sample teaspoon",recipe.getIngredients().iterator().next().getUnitOfMeasure().getUom());
         assertEquals("sample category",recipe.getCategories().iterator().next().getDescription());
     }
 
