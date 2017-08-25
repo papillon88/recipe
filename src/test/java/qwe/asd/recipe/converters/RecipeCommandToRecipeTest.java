@@ -69,6 +69,7 @@ public class RecipeCommandToRecipeTest {
         assertEquals("sample note",recipe.getNote().getRecipeNotes());
         assertEquals("sample teaspoon",recipe.getIngredients().iterator().next().getUnitOfMeasure().getUom());
         assertEquals("sample category",recipe.getCategories().iterator().next().getDescription());
+        assertEquals(Integer.valueOf(30),recipe.getCookTime());
     }
 
 }
