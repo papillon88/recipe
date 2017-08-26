@@ -70,6 +70,7 @@ public class RecipeCommandToRecipeTest {
         assertEquals("sample teaspoon",recipe.getIngredients().iterator().next().getUnitOfMeasure().getUom());
         assertEquals("sample category",recipe.getCategories().iterator().next().getDescription());
         assertEquals(Integer.valueOf(30),recipe.getCookTime());
+        assertEquals("chicken grill",recipe.getDescription());
     }
 
 }
