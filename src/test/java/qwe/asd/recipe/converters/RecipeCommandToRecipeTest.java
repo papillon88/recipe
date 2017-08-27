@@ -42,6 +42,7 @@ public class RecipeCommandToRecipeTest {
         RecipeCommand recipeCommand = new RecipeCommand();
         recipeCommand.setDescription("chicken grill");
         recipeCommand.setCookTime(30);
+        recipeCommand.setPrepTime(20);
 
         NoteCommand noteCommand = new NoteCommand();
         noteCommand.setId(1L);
@@ -70,6 +71,7 @@ public class RecipeCommandToRecipeTest {
         assertEquals("sample teaspoon",recipe.getIngredients().iterator().next().getUnitOfMeasure().getUom());
         assertEquals("sample category",recipe.getCategories().iterator().next().getDescription());
         assertEquals(Integer.valueOf(30),recipe.getCookTime());
+        assertEquals(Integer.valueOf(20),recipe.getPrepTime());
         assertEquals("chicken grill",recipe.getDescription());
     }
 
