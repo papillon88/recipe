@@ -1,5 +1,6 @@
 package qwe.asd.recipe.services;
 
+import qwe.asd.recipe.commands.RecipeCommand;
 import qwe.asd.recipe.domains.Recipe;
 
 import java.util.List;
@@ -10,4 +11,5 @@ public interface RecipeService {
 
     Set<Recipe> getAllRecipes();
     Recipe getRecipeById(Long id);
+    RecipeCommand saveRecipeCommand(RecipeCommand recipeCommand);
 }
