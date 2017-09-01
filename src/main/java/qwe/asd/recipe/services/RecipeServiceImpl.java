@@ -3,9 +3,13 @@ package qwe.asd.recipe.services;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import qwe.asd.recipe.commands.RecipeCommand;
+import qwe.asd.recipe.converters.RecipeCommandToRecipe;
+import qwe.asd.recipe.converters.RecipeToRecipeCommand;
 import qwe.asd.recipe.domains.Recipe;
 import qwe.asd.recipe.repositories.RecipeRepo;
 
+import javax.transaction.Transactional;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
@@ -17,6 +21,10 @@ public class RecipeServiceImpl implements RecipeService {
 
     @Autowired
     private RecipeRepo recipeRepo;
+    @Autowired
+    private RecipeCommandToRecipe recipeCommandToRecipe;
+    @Autowired
+    private RecipeToRecipeCommand recipeToRecipeCommand;
 
     /************************************
     *************************************
@@ -46,5 +54,12 @@ public class RecipeServiceImpl implements RecipeService {
         return recipeOptional.get();
     }
 
-
+    @Override
+    @Transactional
+    public RecipeCommand saveRecipeCommand(RecipeCommand recipeCommand) {
+        Recipe detachedRecipe = recipeCommandToRecipe.convert(recipeCommand);
+        Recipe savedRecipe = recipeRepo.save(detachedRecipe);
+        log.debug("****************** "+ savedRecipe.getDescription());
+        return recipeToRecipeCommand.convert(savedRecipe);
+    }
 }
