@@ -40,7 +40,7 @@ public class IndexControllerTest {
     @Test
     public void getIndexPage() throws Exception {
         assertEquals("index",indexController.getIndexPage(model));
-        Mockito.verify(recipeService,Mockito.times(1)).getAllRecipes();
+        Mockito.verify(recipeService,Mockito.times(1)).getAllRecipeCommands();
         Mockito.verify(model,Mockito.times(1)).addAttribute(eq("recipes"),anySet());
     }
 
