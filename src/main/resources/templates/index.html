@@ -33,8 +33,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <!--/*@thymesVar id="recipes" type="java.util.List"*/-->
-                <!--/*@thymesVar id="recipe" type="qwe.asd.recipe.domains.Recipe"*/-->
+                <!--/*@thymesVar id="recipes" type="java.util.HashSet"*/-->
                 <tr th:each="recipe : ${recipes}">
                     <td th:text="${recipe.id}"></td>
                     <td th:text="${recipe.description}"></td>

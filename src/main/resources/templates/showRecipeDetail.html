@@ -19,7 +19,7 @@
         <div class="col-md-6 col-md-offset-3">
 
             <!--recipe panels start-->
-            <!--/*@thymesVar id="recipe" type="qwe.asd.recipe.domains.Recipe"*/-->
+            <!--/*@thymesVar id="recipe" type="qwe.asd.recipe.commands.RecipeCommand"*/-->
             <div class="panel panel-primary" style="margin-top: 20px">
                 <div class="panel-heading" style="font-size: large;">
                     Recipe Info
@@ -69,7 +69,7 @@
                     <ul>
                         <li th:each="ingredient : ${recipe.getIngredients()}"
                             th:text="${ingredient.getAmount() +
-                                  ' ' + ingredient.getUnitOfMeasure().getUom() +
+                                  ' ' + ingredient.getUnitOfMeasureCommand().getUom() +
                                   ' - ' + ingredient.getDescription()}"></li>
                     </ul>
                 </div>
@@ -91,7 +91,7 @@
                     Notes
                 </div>
                 <div class="panel-body">
-                    <p th:text="${recipe.getNote().getRecipeNotes()}"></p>
+                    <p th:text="${recipe.getNoteCommand().getRecipeNotes()}"></p>
                 </div>
             </div>
             <!--recipe panels end-->
