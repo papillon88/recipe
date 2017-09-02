@@ -24,7 +24,7 @@ public class RecipeController {
     *************************************
     ************************************/
 
-    @RequestMapping(value = "/recipe/show/{recipeId}", method = RequestMethod.GET)
+    @RequestMapping(value = "/recipe/{recipeId}", method = RequestMethod.GET)
     public String showById(@PathVariable String recipeId, Model model){
         model.addAttribute("recipe",recipeService.getRecipeById(Long.valueOf(recipeId)));
         return "show";
@@ -34,7 +34,7 @@ public class RecipeController {
     @RequestMapping(value = {"/recipe/new"}, method = RequestMethod.GET)
     public String createRecipe(Model model){
         model.addAttribute("recipe",new RecipeCommand());
-        return "create";
+        return "recipeform";
     }
 
 
