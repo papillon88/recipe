@@ -25,24 +25,26 @@ public class RecipeController {
     ************************************/
 
     @RequestMapping(value = "/recipe/{recipeId}", method = RequestMethod.GET)
-    public String showById(@PathVariable String recipeId, Model model){
-        model.addAttribute("recipe",recipeService.getRecipeById(Long.valueOf(recipeId)));
-        return "show";
+    public String showRecipeById(@PathVariable String recipeId, Model model){
+        model.addAttribute("recipe",recipeService.getRecipeCommandById(Long.valueOf(recipeId)));
+        return "showRecipeDetail";
     }
 
 
     @RequestMapping(value = {"/recipe/new"}, method = RequestMethod.GET)
-    public String createRecipe(Model model){
+    public String showRecipeFormForCreation(Model model){
         model.addAttribute("recipe",new RecipeCommand());
         return "recipeform";
     }
 
 
-    @RequestMapping(value = {"/recipe"},method = RequestMethod.POST)
-    public String saveOrUpdate(@ModelAttribute RecipeCommand recipeCommand){
+    @RequestMapping(value = {"/recipe/create"},method = RequestMethod.POST)
+    public String postSubmitRecipeForm(@ModelAttribute RecipeCommand recipeCommand){
         RecipeCommand recipeCommand1 = recipeService.saveRecipeCommand(recipeCommand);
         return "redirect:/";
     }
+
+
 
     public RecipeService getRecipeService() {
         return recipeService;
