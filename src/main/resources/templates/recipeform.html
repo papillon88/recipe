@@ -21,6 +21,7 @@
 
             <!--/*@thymesVar id="recipe" type="qwe.asd.recipe.commands.RecipeCommand"*/-->
             <form th:object="${recipe}" th:action="@{'/recipe/create'}" method="post">
+                <input type="hidden" th:field="*{id}"/>
             <div class="panel-group">
                 <div class="panel panel-primary" style="margin-top: 20px">
                     <div class="panel-heading" style="font-size: large;">
@@ -113,9 +114,9 @@
                                     <li th:remove="all">1 Cup of milk</li>
                                     <li th:remove="all">1 Teaspoon of chocolate</li>
                                     <li th:each="ingredient : ${recipe.ingredients}"
-                                        th:text="${(ingredient.getAmount() +
+                                        th:text="${(ingredient.amount +
                                         ' ' + ingredient.unitOfMeasureCommand.uom +
-                                        ' - ' + ingredient.getDescription())}">1 Teaspoon of Sugar
+                                        ' - ' + ingredient.description)}">1 Teaspoon of Sugar
                                     </li>
                                 </ul>
                             </div>
