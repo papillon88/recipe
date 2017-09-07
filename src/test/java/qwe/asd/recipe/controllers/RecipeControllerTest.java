@@ -79,4 +79,18 @@ public class RecipeControllerTest {
                 .andExpect(MockMvcResultMatchers.view().name("redirect:/"));
     }
 
+    @Test
+    public void testUpdateRecipeById() throws Exception {
+        Mockito.when(recipeService.getRecipeCommandById(Matchers.anyLong())).thenReturn(new RecipeCommand());
+        mockMvc.perform(MockMvcRequestBuilders.get("/recipe/1/update"))
+                .andExpect(MockMvcResultMatchers.status().isOk())
+                .andExpect(MockMvcResultMatchers.view().name("recipeform"))
+                .andExpect(MockMvcResultMatchers.model().attributeExists("recipe"));
+        Mockito.verify(recipeService,Mockito.times(1)).getRecipeCommandById(Matchers.anyLong());
+
+        assertEquals("recipeform",recipeController.updateRecipeById("1",model));
+        Mockito.verify(model,Mockito.times(1)).addAttribute(Matchers.eq("recipe"),Matchers.anyObject());
+
+    }
+
 }
