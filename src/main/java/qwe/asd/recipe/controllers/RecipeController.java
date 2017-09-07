@@ -45,6 +45,16 @@ public class RecipeController {
     }
 
 
+    @RequestMapping(value = {"/recipe/{recipeId}/update"} , method = RequestMethod.GET)
+    public String updateRecipeById(@PathVariable String recipeId, Model model){
+        //get recipe by id , convert to recipe command and throw to recipeform for update
+        model.addAttribute("recipe",recipeService.getRecipeCommandById(Long.valueOf(recipeId)));
+        return "recipeform";
+    }
+
+
+
+
 
     public RecipeService getRecipeService() {
         return recipeService;
