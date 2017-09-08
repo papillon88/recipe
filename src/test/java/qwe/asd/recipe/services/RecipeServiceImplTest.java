@@ -71,6 +71,20 @@ public class RecipeServiceImplTest {
         Mockito.verify(recipeRepo,Mockito.times(1)).findById(Matchers.anyLong());
     }
 
+    @Test
+    public void testDeleteRecipeById() throws Exception {
+        //given
+        Long delRecipe = Long.valueOf(2L);
+
+        //when
+        recipeService.deleteRecipeById(delRecipe);
+
+        //then
+        Mockito.verify(recipeRepo,Mockito.times(1)).delete(Matchers.anyLong());
+
+
+    }
+
 
 
 }
