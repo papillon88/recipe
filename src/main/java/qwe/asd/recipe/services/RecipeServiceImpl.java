@@ -65,4 +65,9 @@ public class RecipeServiceImpl implements RecipeService {
             throw new RuntimeException("Recipe NOT Found");
         return recipeToRecipeCommand.convert(recipeOptional.get());
     }
+
+    @Override
+    public void deleteRecipeById(Long recipeId) {
+        recipeRepo.delete(recipeId);
+    }
 }
