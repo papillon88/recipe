@@ -59,9 +59,9 @@ public class RecipeController {
     }
 
 
-    public RecipeService getRecipeService() {
+    /*public RecipeService getRecipeService() {
         return recipeService;
-    }
+    }*/
 
     public void setRecipeService(RecipeService recipeService) {
         this.recipeService = recipeService;
