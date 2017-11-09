@@ -18,11 +18,6 @@ public class RecipeController {
     @Autowired
     private RecipeService recipeService;
 
-    /************************************
-    *************************************
-    Methods
-    *************************************
-    ************************************/
 
     @RequestMapping(value = "/recipe/{recipeId}", method = RequestMethod.GET)
     public String showRecipeById(@PathVariable String recipeId, Model model){
