@@ -18,7 +18,7 @@ public class Ingredient {
     @ManyToOne
     @JoinColumn(name = "recipe_id")
     private Recipe recipe;
-    @OneToOne
+    @OneToOne(fetch = FetchType.EAGER)
     private UnitOfMeasure unitOfMeasure;
 
     /*******************
