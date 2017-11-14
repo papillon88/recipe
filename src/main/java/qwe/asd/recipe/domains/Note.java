@@ -16,7 +16,7 @@ public class Note {
     private Long id;
     @Lob
     private String recipeNotes;
-    @OneToOne(mappedBy = "note")
+    @OneToOne
     private Recipe recipe;
 
     /*******************
