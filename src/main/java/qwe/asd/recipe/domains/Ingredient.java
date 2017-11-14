@@ -16,6 +16,7 @@ public class Ingredient {
     private String description;
     private BigDecimal amount;
     @ManyToOne
+    @JoinColumn(name = "recipe_id")
     private Recipe recipe;
     @OneToOne
     private UnitOfMeasure unitOfMeasure;
