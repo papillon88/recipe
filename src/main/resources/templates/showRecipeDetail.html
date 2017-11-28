@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>View</title>
+    <title>Recipe Detail</title>
     <link rel="stylesheet" th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}"/>
     <script th:href="@{/webjars/jquery/3.2.1/jquery.min.js}"></script>
     <script th:href="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
@@ -63,7 +63,16 @@
 
             <div class="panel panel-primary" style="margin-top: 20px">
                 <div class="panel-heading" style="font-size: large;">
-                    Ingredients
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-11">
+                                Ingredients
+                            </div>
+                            <div class="col-md-1">
+                                <a class="btn btn-default" th:href="@{'/recipe/'+${recipe.id}+'/ingredients'}" role="button">View</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="panel-body">
                     <ul>
