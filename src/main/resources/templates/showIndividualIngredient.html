@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>Ingredients Details</title>
+    <title>Ingredient</title>
 
     <link rel="stylesheet" th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}"/>
     <script th:href="@{/webjars/jquery/3.2.1/jquery.min.js}"></script>
@@ -21,30 +21,22 @@
 <div class="container-fluid">
     <div class="panel panel-primary" style="margin-top: 20px">
         <div class="panel-heading" style="font-size: large;">
-            Ingredients
+            Ingredient
         </div>
         <div class="panel-body">
             <table class="table">
                 <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Ingredient</th>
-                    <th>View</th>
-                    <th>Update</th>
-                    <th>Delete</th>
+                    <th>Description</th>
                 </tr>
                 </thead>
                 <tbody>
 
-
-                <!--/*@thymesVar id="ingredients" type="qwe.asd.recipe.commands.IngredientCommand"*/-->
-                <tr th:each="ingredient : ${ingredients}">
+                <tr>
                     <!--/*@thymesVar id="ingredient" type="qwe.asd.recipe.commands.IngredientCommand"*/-->
                     <td th:text="${ingredient.id}"></td>
                     <td th:text="${(ingredient.amount+''+ingredient.unitOfMeasureCommand.uom+' '+ingredient.description)}"></td>
-                    <td><a th:href="@{'/recipe/'+${ingredient.recipeId}+'/ingredient/'+${ingredient.id}+'/show'}">View</a> </td>
-                    <td><a th:href="@{'/recipe/'+${ingredient.recipeId}+'/ingredient/'+${ingredient.id}+'/update'}">Update</a> </td>
-                    <td><a th:href="@{'/recipe/'+${ingredient.recipeId}+'/ingredient/'+${ingredient.id}+'/delete'}">Delete</a> </td>
                 </tr>
                 </tbody>
             </table>
