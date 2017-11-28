@@ -17,7 +17,7 @@ import static org.junit.Assert.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class RecipeServiceImplIT {
+public class RecipeServiceImpl_Integration_Test {
 
     @Autowired
     private RecipeService recipeService;

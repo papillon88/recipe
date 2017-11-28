@@ -13,6 +13,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.ui.Model;
 import qwe.asd.recipe.commands.IngredientCommand;
 import qwe.asd.recipe.commands.RecipeCommand;
+import qwe.asd.recipe.services.IngredientService;
 import qwe.asd.recipe.services.RecipeService;
 
 import java.util.HashSet;
@@ -25,6 +26,8 @@ public class IngredientControllerTest {
     @Mock
     RecipeService recipeService;
     @Mock
+    IngredientService ingredientService;
+    @Mock
     Model model;
 
     IngredientController ingredientController;
@@ -34,7 +37,7 @@ public class IngredientControllerTest {
     @Before
     public void setUp() throws Exception {
         MockitoAnnotations.initMocks(this);
-        ingredientController = new IngredientController(recipeService);
+        ingredientController = new IngredientController(recipeService,ingredientService);
         mockMvc = MockMvcBuilders.standaloneSetup(ingredientController).build();
     }
 
@@ -57,6 +60,21 @@ public class IngredientControllerTest {
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.view().name("showIngredientsDetails"))
                 .andExpect(MockMvcResultMatchers.model().attributeExists("ingredients"));
+    }
+
+
+
+    @Test
+    public void showIngredientByIngredientIDAndRecipeId() throws Exception {
+
+        Mockito.when(ingredientService.findByRecipeIdAndIngredientId(Matchers.anyLong(),Matchers.anyLong())).thenReturn(new IngredientCommand());
+
+        mockMvc.perform(MockMvcRequestBuilders.get("/recipe/1/ingredient/2/show"))
+                .andExpect(MockMvcResultMatchers.status().isOk())
+                .andExpect(MockMvcResultMatchers.view().name("showIndividualIngredient"))
+                .andExpect(MockMvcResultMatchers.model().attributeExists("ingredient"));
+
+        Mockito.verify(ingredientService,Mockito.times(1)).findByRecipeIdAndIngredientId(Matchers.anyLong(),Matchers.anyLong());
     }
 
 }
